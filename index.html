@@ -213,7 +213,30 @@
         <button type="submit">S'inscrire</button>
       </form>
     </section>
+ <button type="submit">S'abonner</button>
+      </form>
+    </section>
+  </div>
+<!-- Bouton retour en haut -->
+<button id="scrollToTopBtn" style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background: #f8a354; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Retour en haut</button>
+<script>
+  // Fonction pour afficher ou cacher le bouton de retour en haut en fonction du défilement de la page
+  window.onscroll = function() {
+    var btn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "block"; // Afficher le bouton si on descend de plus de 200px
+    } else {
+      btn.style.display = "none"; // Cacher le bouton si on est tout en haut
+    }
+  };
 
+  // Fonction pour faire défiler la page vers le haut
+  document.getElementById("scrollToTopBtn").onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Défilement fluide vers le haut
+  };
+</script>
+
+ 
   </div>
 </body>
 </html>
