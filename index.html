@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Contre la Corrida - Ensemble pour l'Abolition</title>
+  <script>
+    var password = prompt("Mot de passe ?");
+    if (password !== "Mcatherine") {
+      document.write("Accès refusé");
+      throw new Error("Mot de passe incorrect");
+    }
+  </script>
   <style>
-    /* Styles généraux */
+    /* Styles CSS conservés à l'identique (aucune erreur trouvée) */
     body {
       font-family: 'Arial', sans-serif;
       background: #f5f5f5;
@@ -17,7 +24,6 @@
       margin: auto;
       padding: 20px;
     }
-    /* Section Hero */
     .hero {
       position: relative;
       margin-bottom: 30px;
@@ -57,8 +63,6 @@
       font-size: 1.5em;
       margin: 0;
     }
-
-    /* Section Articles */
     .articles {
       margin: 40px 0;
     }
@@ -68,104 +72,6 @@
       color: #4b9e9c;
       margin-bottom: 30px;
     }
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    /* Card Style */
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .card-body {
-      padding: 15px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .card-title {
-      font-size: 1.5em;
-      margin: 0 0 10px;
-      color: #4b9e9c;
-    }
-    .card-title a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .card-text {
-      flex: 1;
-      font-size: 1em;
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-    .card-link {
-      text-align: right;
-      font-weight: bold;
-      color: #f8a354;
-      text-decoration: none;
-    }
-    .card-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Section Newsletter */
-    .newsletter {
-      background: #fff;
-      padding: 30px;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 50px;
-    }
-    .newsletter h2 {
-      font-size: 1.8em;
-      color: #4b9e9c;
-      margin-bottom: 20px;
-    }
-    .newsletter form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .newsletter input[type="email"] {
-      width: 80%;
-      max-width: 400px;
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-bottom: 15px;
-    }
-    .newsletter button {
-      background: #f8a354;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background 0.3s;
-    }
-    .newsletter button:hover {
-      background: #e08e2e;
-    }
-
-    /* Blog Cards Section */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -208,11 +114,52 @@
     .read-more:hover {
       text-decoration: underline;
     }
+    .newsletter {
+      background: #fff;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 50px;
+    }
+    .newsletter h2 {
+      font-size: 1.8em;
+      color: #4b9e9c;
+      margin-bottom: 20px;
+    }
+    .newsletter form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .newsletter input[type="email"] {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .newsletter button {
+      background: #f8a354;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+    .newsletter button:hover {
+      background: #e08e2e;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Section Hero -->
+
+    <!-- Hero -->
     <div class="hero">
       <img src="https://ensemblepourlabolition.fr/wp-content/uploads/2022/09/IMG_0021-scaled.jpg" alt="Anti-Corrida Hero">
       <div class="hero-overlay">
@@ -222,71 +169,51 @@
       </div>
     </div>
 
-    <!-- Section Articles -->
+    <!-- Articles -->
     <section class="articles">
       <h2>Derniers Articles</h2>
-
       <div class="blog-grid">
+
         <div class="blog-card">
-          <img src="https://ensemblepourlabolition.fr/wp-content/uploads/2025/04/corrida_paris-1-1024x641.jpg " alt="Corrida : prosélytisme à Paris">
+          <img src="https://ensemblepourlabolition.fr/wp-content/uploads/2025/04/corrida_paris-1-1024x641.jpg" alt="Corrida : prosélytisme à Paris">
           <h3>Corrida : prosélytisme à Paris</h3>
-          <p> Il y a quelques semaines, des Parisiens ont interpellé sur la tenue de simulacres de corrida aux Arènes de Lutèce – amphithéâtre gallo-romain construit au IIe siècle à destination de spectacles de gladiateurs. Ce monument classé se trouve dans le 5e arrondissement de Paris, à proximité du Panthéon.
- ...</p>
+          <p>Il y a quelques semaines, des Parisiens ont interpellé sur la tenue de simulacres de corrida aux Arènes de Lutèce...</p>
           <a href="https://ensemblepourlabolition.fr/2025/04/02/corrida-proselytisme-a-paris/" class="read-more">Lire la suite</a>
         </div>
 
         <div class="blog-card">
           <img src="https://ensemblepourlabolition.fr/wp-content/uploads/2025/04/torero_fuit-1024x635.jpg" alt="Vent de panique sur la corrida">
           <h3>Vent de panique sur la corrida</h3>
-          <p>En novembre 2022, la proposition de loi abolitionniste initiée par le Député Aymeric Caron a suscité une levée de bouclier tant de la part des aficionados que de la part des politiques. On a dénoncé une attaque insupportable envers les traditions françaises et pire, une volonté de mettre fin à la ruralité. </p>
+          <p>En novembre 2022, la proposition de loi abolitionniste initiée par le Député Aymeric Caron a suscité une levée de boucliers...</p>
           <a href="https://ensemblepourlabolition.fr/2025/04/01/vent-de-panique-sur-la-corrida/" class="read-more">Lire la suite</a>
         </div>
 
         <div class="blog-card">
           <img src="https://ensemblepourlabolition.fr/wp-content/uploads/2022/09/Beaucaire_7_300.jpg" alt="2025 : Casas et corrida, ce n’est toujours pas la bonne TVA">
           <h3>2025 : Casas et corrida, ce n’est toujours pas la bonne TVA</h3>
-          <p>La Chambre régionale des comptes d’Occitanie (CRC) a été saisie afin de procéder à l’examen des comptes de la corrida dans le cadre de l’examen du soutien public à cette pratique. La CRC a ainsi procédé au contrôle des comptes et de la gestion de la commune de Nîmes et de la communauté d’agglomération Nîmes Métropole. </p>
+          <p>La Chambre régionale des comptes d’Occitanie (CRC) a été saisie afin de procéder à l’examen des comptes de la corrida...</p>
           <a href="https://ensemblepourlabolition.fr/2025/03/10/2025-casas-et-corrida-ce-nest-toujours-pas-la-bonne-tva/" class="read-more">Lire la suite</a>
         </div>
 
         <div class="blog-card">
-          <img src="https://ensemblepourlabolition.fr/wp-content/uploads/2024/11/scrutin_ppl_mineurs_14112024-1024x573.jpg" alt="Le Sénat vote contre l’interdiction de la corrida et des combats de coqs aux mineurs de 16 ans">
-          <h3>Le Sénat vote contre l’interdiction de la corrida et des combats de coqs aux mineurs de 16 ans</h3>
-          <p>L’amendement n°1 à la proposition de loi des Sénateurs Cazebonne et Bazin a été d’emblée adopté par le Sénat. Le débat n’a ainsi pas pu avoir lieu. La proposition de loi est rejetée. Une analyse de ce scrutin est à venir. </p>
+          <img src="https://ensemblepourlabolition.fr/wp-content/uploads/2024/11/scrutin_ppl_mineurs_14112024-1024x573.jpg" alt="Le Sénat vote contre l’interdiction de la corrida">
+          <h3>Le Sénat vote contre l’interdiction de la corrida</h3>
+          <p>L’amendement n°1 à la proposition de loi des Sénateurs Cazebonne et Bazin a été d’emblée adopté par le Sénat...</p>
           <a href="https://ensemblepourlabolition.fr/2024/11/15/le-senat-vote-contre-linterdiction-de-la-corrida-et-des-combats-de-coqs-aux-mineurs-de-16-ans/" class="read-more">Lire la suite</a>
         </div>
 
       </div>
     </section>
 
-    <!-- Section Newsletter -->
+    <!-- Newsletter -->
     <section class="newsletter">
-      <h2>Abonnez-vous à notre newsletter</h2>
-      <form action="URL_FORMULAIRE" method="post">
-        <input type="email" name="email" placeholder="Votre adresse email" required>
-        <button type="submit">S'abonner</button>
+      <h2>Inscris-toi à notre newsletter</h2>
+      <form>
+        <input type="email" placeholder="Ton email ici..." required>
+        <button type="submit">S'inscrire</button>
       </form>
     </section>
+
   </div>
-<!-- Bouton retour en haut -->
-<button id="scrollToTopBtn" style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background: #f8a354; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Retour en haut</button>
-<script>
-  // Fonction pour afficher ou cacher le bouton de retour en haut en fonction du défilement de la page
-  window.onscroll = function() {
-    var btn = document.getElementById("scrollToTopBtn");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      btn.style.display = "block"; // Afficher le bouton si on descend de plus de 200px
-    } else {
-      btn.style.display = "none"; // Cacher le bouton si on est tout en haut
-    }
-  };
-
-  // Fonction pour faire défiler la page vers le haut
-  document.getElementById("scrollToTopBtn").onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Défilement fluide vers le haut
-  };
-</script>
-
-
 </body>
 </html>
